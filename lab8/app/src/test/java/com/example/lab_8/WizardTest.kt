@@ -45,4 +45,18 @@ class WizardTest {
         assertEquals(70, evilWizard.mana)
     }
 
+    @Test
+    fun testTrainHaveAtLeast5Mana() {
+        evilWizard.mana = 5
+        evilWizard.train()
+
+        assertEquals(0,evilWizard.mana)
+    }
+
+    fun testTrainDoesNotHaveAtLeast5Mana() {
+        evilWizard.mana = 4
+        evilWizard.train()
+
+        assertEquals(5,evilWizard.mana)
+    }
 }
